@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <nav id="navbar" class="navbar">
+    <ul>
+        <li><a class="nav-link scrollto" href="{{url_for('home')}}">Home</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('about')}}">About</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('rotten')}}">Rotten Predict</a></li>
+        <li><a class="nav-link scrollto active" href="{{url_for('bruises')}}">Bruises Predict</a></li>
+        <li><a class="nav-link scrollto " href="{{url_for('index')}}">LogOut</a></li>
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <section id="contact">
+        <center>
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="section-title">Predict  Bruises / No Bruises</h4>
+                        <div class="section-title-divider"></div>
+                    </div>
+                </div>
+
+                <div style="background-color:rgba(15, 194, 134, 0.521); width: 700px;">
+                    <div class="col-10">
+                        <div class="form"><br><br><br>
+
+                            {% if prediction %}
+                                <h3 style="color: black;">Prediction: {{prediction}}</h3>
+                            {% endif %}
+
+                            <form action="{{url_for('bruises')}}" method="post" enctype="multipart/form-data">
+
+                            <h2>Upload Image</h2>
+
+                            <div class="form-group mt-3">
+                                <input type="file" class="form-control" name="file" accept="image/*" required>
+                            </div><br>
+                            
+                            <div class="text-center"><button style="width: 400px;" class="btn btn-primary" type="submit">Submit</button></div>
+                            </form><br><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </section>
+{% endblock %}

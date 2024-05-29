@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <nav id="navbar" class="navbar">
+    <ul>
+        <li><a class="nav-link scrollto active" href="{{url_for('home')}}">Home</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('about')}}">About</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('rotten')}}">Rotten Predict</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('bruises')}}">Bruises Predict</a></li>
+        <li><a class="nav-link scrollto " href="{{url_for('index')}}">LogOut</a></li>
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <section id="hero">
+        <div class="hero-container">
+        <div data-aos="fade-in">
+            
+            <h2>Sapota Ripeness Detection and Shelf Life Prediction using Thermal Imaging <span class="typed" data-typed-items="Thermal Imaging"></span></h2>
+        </div>
+        </div>
+    </section>
+{% endblock %}
